@@ -65,5 +65,35 @@
     echo "Binárna reprezentácia čísla 29 je: " . $binary;
 ?>
 
+<br><br><p>8. Vypiste 707 v sesnastkovej sustave</p>
+<?php
+$number = 707;
+$hexadec = "";
+$zvysok = 0;
+$i = 1;
+
+while ($number > 0) {
+    $zvysok = $number % 16;
+    if ($zvysok == 10) {
+        $zvysok = 'A';
+    } else if ($zvysok == 11) {
+        $zvysok = 'B';
+    } else if ($zvysok == 12) {
+        $zvysok = 'C';
+    } else if ($zvysok == 13) {
+        $zvysok = 'D';
+    } else if ($zvysok == 14) {
+        $zvysok = 'E';
+    } else if ($zvysok == 15) {
+        $zvysok = 'F';
+    }
+    $number = floor($number / 16);
+    $hexadec = $zvysok . $hexadec;
+    echo "${i}. delenie= ${number}, zvysok= ${zvysok} <br>";
+    $i++;
+}
+
+echo "Hexadecimalna reprezentácia čísla 707 je: " . $hexadec;
+?>
 </body>
 </html>
