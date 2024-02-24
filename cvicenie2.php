@@ -91,11 +91,10 @@ for ($i = 1; $i <= 10; $i++){
 echo "<hr>";
 
 
-//uloha 10
-$funkcia = "odmocnenie";
-$cislo1 = 20;
-$cislo2 = 2;
 
+//uloha 10
+
+/*
 if ($funkcia == "scitanie"){
     echo $cislo1 + $cislo2;
 } else if ($funkcia == "odcitanie"){
@@ -109,5 +108,41 @@ if ($funkcia == "scitanie"){
 } else if ($funkcia == "odmocnenie"){
     echo $cislo1 ** 1/$cislo2;
 }
+*/
+
+$funkcia = "odmocnenie";
+$cislo1 = 20;
+$cislo2 = 2;
+
+switch ($funkcia) {
+    case "scitanie":
+        echo $cislo1 + $cislo2;
+        break;
+    case "odcitanie":
+        echo $cislo1 - $cislo2;
+        break;
+    case "nasobenie":
+        echo $cislo1 * $cislo2;
+        break;
+    case "delenie":
+        echo $cislo1 / $cislo2;
+        break;
+    case "umocnenie":
+        echo $cislo1 ** $cislo2;
+        break;
+    case "odmocnenie":
+        echo $cislo1 ** (1/$cislo2);
+        break;
+    case "logaritmus":
+        if ($cislo2 === "") {
+            echo log($cislo1);
+        } else {
+            echo log($cislo1, $cislo2);
+        }
+        break;
+    default:
+        echo "Nieco si zadal zle";
+}
+
 
 // doplnit kalkulacu cez switch, doplnit moznost logaritmu
